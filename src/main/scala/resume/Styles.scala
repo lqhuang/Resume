@@ -3,7 +3,7 @@ package resume
 import scalatags.Text.all._
 import scalatags.stylesheet._
 
-object Styles{
+object Styles extends StyleSheet{
   val cssReset =
     """
       |/* http://meyerweb.com/eric/tools/css/reset/
@@ -55,10 +55,7 @@ object Styles{
       |	border-spacing: 0;
       |}
     """.stripMargin
-  val sheet = Sheet[Styles]
-}
-import resume.Styles._
-trait Styles extends StyleSheet{
+  
   def nameText = cls(
     fontSize := 24,
     color := "#008"
@@ -86,8 +83,8 @@ trait Styles extends StyleSheet{
   def para = cls(
     fontSize := 12,
     textAlign.justify,
-    marginTop := 3,
-    marginBottom := 3
+    marginTop := 4,
+    marginBottom := 4
   )
   def listItem = cls(
     para.splice,

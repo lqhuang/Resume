@@ -2,7 +2,6 @@ package resume
 
 import ammonite.ops._
 import Styles._
-import Styles.sheet._
 import scalatags.Text.all._
 object Resume{
   def dataUri(filepath: Path) = {
@@ -49,7 +48,7 @@ object Resume{
       fontFamily := "Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif",
       head(
         scalatags.Text.tags2.style(raw(cssReset)),
-        scalatags.Text.tags2.style(raw(sheet.styleSheetText))
+        scalatags.Text.tags2.style(raw(Styles.styleSheetText))
       ),
       body(
         width := 720,
@@ -67,7 +66,12 @@ object Resume{
               div(
                 textAlign.right,
                 greyText,
-                autolink("http://www.github.com/lihaoyi")
+                autolink("http://www.lihaoyi.com")
+              ),
+              div(
+                textAlign.right,
+                greyText,
+                autolink("http://www.github.com/lihaoyi/")
               )
             )
           )
@@ -81,24 +85,28 @@ object Resume{
               row(h2(sectionHeading, "Dropbox"), logo("Dropbox.png"), div(rightGreyText, "San Francisco, CA")),
               titledBlock(
                 "Software Engineer, Developer Tools", "Mar 2015 - Present",
+
                 """
-                Prototyped, implemented and (gradually) rolled out an improved dev
-                workflow to all of engineering, reducing edit-refresh latency from 40s
-                to 13s for Python and 15s to 5s for Coffeescript
+                Built static analysis tools for in Python and Coffeescript, allowing
+                fast refactoring without fear. Enforces correctness, file-layout conventions,
+                and blocks code smells such as import cycles or dead code.
+                Rejects 50+ diffs a week
+                """,
+                """
+                Rolled out an improved development workflow, reducing
+                edit-refresh latency by 3x for Python and Coffeescript
                 """,
                 """
                 Led a team of 2-3 to destroy flaky tests in our CI system; via research,
                 monitoring, and automatic quarantine, we reduced the number of builds
-                failing due to flaky tests from ~10% to <1%
+                failing due to flaky tests from about 10% to 1%
                 """,
                 """
-                Helped manage our CI system comprising >3000 CI machines; performing
-                on-call duties, manual scaling up/down, cluster-wide distributed
-                trouble-shooting and recovery
+                Helped manage our CI system comprising >3000 CI machines
                 """,
                 """
                 Mentored an intern completing a successful project (test
-                quarantine) in his 12 weeks here, getting a return offer.
+                quarantine) in his 12 weeks here
                 """
               ),
               titledBlock(
@@ -109,18 +117,13 @@ object Resume{
                 Reduced the number of bugs reaching production by 5-10 a week
                 """,
                 """
-                Modularized our >100,000 lines of Coffeescript, moving from a 'concat
-                em' build system to Require.js modules
+                Modularized our >100,000 lines of Coffeescript, moving from a 'cat
+                em all' build system to Require.js modules
                 """,
                 """
-                Built static analysis tools to enforce conventions in Python and
-                Coffeescript, allowing fast refactoring without fear
-                """,
-                """
-                Built an auto-packager, which uses machine
-                learning to bundle Javascript for faster download. Reduced
-                the number of files loaded on the home page from ~250 to ~50, cutting
-                international page-load latency by several seconds.
+                Built an auto-packager using machine learning to reduce
+                the number of separate Javascript downloads by 200ish per page, cutting
+                international latency by several seconds.
                 """
               ),
               titledBlock(
@@ -140,69 +143,135 @@ object Resume{
           "Open Source",
           col(
             row(h2(sectionHeading, "Scala.js"), logo("ScalaJS.png")),
-            titledBlock(
-              "Core Contributor", "Sep 2013 - Present",
+            bulletList(
               p(para,
-                "Scala.js (", autolink("http://www.scala-js.org"), ") is a compiler that ",
-                "converts Scala code into equivalent, executable Javascript. It allows you ",
-                "to write websites in an expressive, type-safe language and share code between ",
-                "client and server. "
-              ),
-              p(para,
-                "Scala.js has thousands of people ",
-                "using it for real work, and a healthy ecosystem of open-source libraries."
-              ),
-              p(para,
-                "I am not the author of the original Scala.js project (that's Sebastien Doraene)",
-                ", but I can confidently say it would not exist as it does today without my help."
-              )
-            ),
-            titledBlock(
-              "Early Adopter", "",
-              div(
                 "Pioneered usage of Scala.js, demonstrating its effectiveness in writing ",
                 "real-world projects through ", autolink("https://lihaoyi.github.io/scala-js-games"), " and ",
                 autolink("https://lihaoyi.github.io/roll")
               ),
-              """
-              Pushed for usability improvements that made Scala.js actually
-              usable (edit-refresh speed, debuggability, etc.)
-              """,
-              "Contributed a dozen commits and many more bug-reports in the process."
-            ),
-            titledBlock(
-              "Community", "",
-              """
-              Built the community from nothing, to thousands of active users.
-              I presented at dozens of conferences and meetups to show off Scala.js and
-              attract interest in the project.
-              """,
-              div(
-                "Highlights include ", i(talkName, "Live Coding Scala.js"), ", Scala.js' ",
+              p(para,
+                """
+                Pushed for usability improvements that made Scala.js actually
+                usable (edit-refresh speed, debuggability, etc.)
+                """
+              ),
+              p(para,
+                "Built the core foundation of Scala.js compatible libraries, such as ",
+                autolink("https://github.com/scala-js/scala-js-dom"), ", ",
+                autolink("https://lihaoyi.github.io/upickle"), ", ",
+                autolink("https://lihaoyi.github.io/utest"), ", and ",
+                autolink("https://lihaoyi.github.io/scalatags"), ", making it ",
+                "possible to do real work with Scala.js"
+              ),
+              p(para,
+                "Did presentations such as ", i(talkName, "Live Coding Scala.js"), ", Scala.js' ",
                 "debut talk at the SF Scala Meetup, ",
                 "which has been watched over 5,000 times. My Scala.js-related videos ",
                 "have had >20,000 views on all platforms. Full listing below."
               ),
-              div(
+              p(para,
                 "Wrote the free, interactive e-book ", i(talkName, "Hands-on Scala.js"), " (",
                 autolink("http://www.hands-on-scala-js.com"), ")"
               ),
-              """
-              Scala by the Bay 2015 had five talks about Scala.js, none of them
-              by me. The community has a life of its own!
-              """
+              p(para,
+                "Built the community from nothing to >1000 people in the Gitter ",
+                "channel, usage by hundreds of companies including big names ",
+                "like Twitter, and people giving talks about it at every Scala conference."
+              )
             ),
-            titledBlock(
-              "Ecosystem", "",
-              """
-              Initially built the Scala.js library ecosystem from nothing. A compiler or
-              language without libraries is useless, and I built out enough of them that
-              people coming to Scala.js could use it to do real work.
-              """,
-              div(
-                "In total my libraries are getting >40,000 downloads a month from the package ",
-                "repository, and every Scala.js project in existence uses some of them. See ",
-                autolink("https://github.com/lihaoyi"), " to find out more."
+            row(h2(sectionHeading, "Ammonite"), logo("Ammonite.png")),
+            bulletList(
+              p(para,
+                "Implemented the Ammonite REPL (",
+                autolink("https://lihaoyi.github.io/Ammonite"),
+                """) an improved Scala REPL with
+                syntax highlighting, pretty-printed output, multi-line editing,
+                and many other quality-of-life improvements
+                """
+              ),
+              p(para,
+                "Effectively the equivalent of IPython REPL for the Scala"
+              ),
+              p(para,
+                """
+                Well known in the community and used in many Scala shops,
+                from startups to large ones like Twitter and Verizon
+                """
+              ),
+              p(para,
+                """
+                Was forked to be used as the REPL for "Dotty", a
+                project by the core Scala team trying to define the
+                future of Scala
+                """
+              )
+            ),
+            row(h2(sectionHeading, "Other Projects")),
+            div(listBlock,
+              p(para,
+                """
+                Built many libraries that are widely used in the Scala
+                community, both on Scala.js and on Scala's traditional platform
+                the JVM, including many which are best-in-class for whatever
+                problem they are trying to solve.
+                Examples include:
+                """
+              )
+            ),
+            bulletList(
+              p(para,
+                span(roleText, "Scalatags "),
+                autolink("https://lihaoyi.github.io/scalatags"),
+                ": convenient, safe, and blazing-fast HTML templating.  ",
+                "The go-to standalone HTML generation library for Scala, ",
+                "its API has inspired many downstream projects like ",
+                autolink("https://github.com/japgolly/scala-js-react"), " and ",
+                autolink("https://github.com/widok/widok")
+              ),
+              p(para,
+                span(roleText, "Scala-Js-Dom "),
+                autolink("https://github.com/scala-js/scala-js-dom"),
+                ": statically-typed bindings for the entirety of the Javascript ",
+                "DOM APIs. Necessary for basically any project using Scala.js"
+              ),
+              p(para,
+                span(roleText, "FastParse "),
+                autolink("https://lihaoyi.github.io/fastparse"),
+                ": convenient, safe and blazing-fast parser-combinators. ",
+                "Basically the same as the std-lib parser-combinators but ",
+                "better in every way. Currently the go-to library for anyone ",
+                "who wants to write a parser in Scala, and is being ",
+                "considered for being included in the standard library"
+              ),
+
+              p(para,
+                span(roleText, "uPickle "),
+                autolink("https://lihaoyi.github.io/upickle"),
+                ": convenient, safe, and pretty-fast JSON serialization"
+              ),
+              p(para,
+                span(roleText, "uTest "),
+                autolink("https://lihaoyi.github.io/utest"),
+                ": a tiny, minimal test-framework without bells and whistles"
+              ),
+              p(para,
+                span(roleText, "Fansi "),
+                autolink("https://lihaoyi.github.io/fansi"),
+                ": convenient, safe and fast terminal colored-string manipulation"
+              ),
+              p(para,
+                span(roleText, "SourceCode "),
+                autolink("https://lihaoyi.github.io/sourcecode"),
+                ": automatically capturing source metadata for logging and debuggability"
+              )
+            ),
+            div(listBlock,
+              p(para,
+                """
+                In total my libraries are getting >90,000 downloads a month
+                from the Maven Central package repository. See
+                """,
+                autolink("https://lihaoyi.github.io/"), " to find out more."
               )
             )
           )
@@ -311,51 +380,6 @@ object Resume{
           "Reference",
           col(
             div(
-              row(h2(sectionHeading, "Projects"), logo("Github.png")),
-              div(listBlock,
-                p(para,
-                  "Other cool projects i've worked on that are worth checking out!"
-                )
-              ),
-              titledBlock(
-                "Ammonite", "Jan 2015 - Present",
-                """
-                Ammonite explores the possibilities of writing a system-shell that uses a
-                modern, type-safe, high-level language
-                """,
-                """
-                Mentored a GSOC student May-Aug 2015, who made improvements to
-                script loading and compilation-caching
-                """,
-                autolink("https://github.com/lihaoyi/Ammonite")
-              ),
-              titledBlock(
-                "MacroPy", "Apr 2013 - Aug 2013",
-                """
-                What if syntactic macros were available in a language like Python
-                instead of weird obscure ones like MIT-Scheme?
-                """,
-                autolink("https://github.com/lihaoyi/macropy")
-              ),
-              titledBlock(
-                "Scala.Rx", "Dec 2012 - Aug 2014",
-                """
-                A FRP library that provides automatic change-propagation in any Scala
-                application.
-                """,
-                autolink("https://github.com/lihaoyi/scala.rx")
-              ),
-              titledBlock(
-                "Metascala", "Feb 2013 - Dec 2013",
-                """
-                A JVM implemented in 3000 lines of code, in Scala on the JVM! Can interpret
-                any Java bytecode, including itself!
-                """,
-                autolink("https://github.com/lihaoyi/Metascala")
-              )
-            ),
-            div(
-              marginTop := 20,
               row(h2(sectionHeading, "Talks"), logo("GoogleSlides.png")),
               div(listBlock,
                 p(para, """
@@ -364,54 +388,14 @@ object Resume{
                 """)
               ),
               talk(
-                "Metascala: a tiny DIY JVM",
-                "Scala Exchange 2 Dec 2013",
-                "https://skillsmatter.com/skillscasts/4916-metascala-a-tiny-diy-jvm"
+                "Isomorphic Web Deevelopement without Javascript, with Scala.js!",
+                "Forward! JS Web Summit, Feb 2016",
+                ""
               ),
               talk(
-                "Live-Coding Scala.js",
-                "SF Scala Meetup 28 Feb 2014",
-                "https://vimeo.com/87845442"
-              ),
-              talk(
-                "Fun Functional-Reactive Programming with Scala.Rx",
-                "Scaladays 17 Jun 2014",
-                "https://vimeo.com/98477272"
-              ),
-              talk(
-                "Cross-platform development with Scala.js",
-                "Scala by the Bay 9 Aug 2014",
-                "https://www.youtube.com/watch?v=Ksoi6AG9nbA"
-              ),
-              talk(
-                "Hands-On Scala.js",
-                "Pacific-North-West Scala 14 Nov 2014",
-                "https://vimeo.com/111978847"
-              ),
-              talk(
-                "Bootstrapping the Scala.js Ecosystem",
-                "Scala Exchange 7 Dec 2014",
-                "https://vimeo.com/113967983"
-              ),
-              talk(
-                "Scala.js - Safety & Sanity in the wild west of the web",
-                "PhillyETE 8 Mar 2015",
-                "https://vimeo.com/124702603"
-              ),
-              talk(
-                "Why (You might like) Scala.js",
-                "Scaladays 17 Mar 2015",
-                "https://vimeo.com/122611959"
-              ),
-              talk(
-                "Beyond Bash",
-                "Scala by the Bay 12 Aug 2015",
-                "https://www.youtube.com/watch?v=dP5tkmWAhjg"
-              ),
-              talk(
-                "FastParse:  Fast, Modern Parser Combinators",
-                "SF Scala Meetup 13 Oct 2015",
-                "https://vimeo.com/142341803"
+                "Shell-scripting in a Typed, OO Language",
+                "New Object Oriented Languages, SPLASH 28 Oct 2015",
+                "https://vimeo.com/143819744"
               ),
               talk(
                 "Fast, Modern, OO Parser Combinators",
@@ -419,11 +403,54 @@ object Resume{
                 "https://vimeo.com/143572750"
               ),
               talk(
-                "Shell-scripting in a Typed, OO Language",
-                "New Object Oriented Languages, SPLASH 28 Oct 2015",
-                "https://vimeo.com/143819744"
+                "FastParse:  Fast, Modern Parser Combinators",
+                "SF Scala Meetup 13 Oct 2015",
+                "https://vimeo.com/142341803"
+              ),talk(
+                "Beyond Bash",
+                "Scala by the Bay 12 Aug 2015",
+                "https://www.youtube.com/watch?v=dP5tkmWAhjg"
+              ),
+              talk(
+                "Why (You might like) Scala.js",
+                "Scaladays 17 Mar 2015",
+                "https://vimeo.com/122611959"
+              ),
+              talk(
+                "Scala.js - Safety & Sanity in the wild west of the web",
+                "PhillyETE 8 Mar 2015",
+                "https://vimeo.com/124702603"
+              ),
+              talk(
+                "Bootstrapping the Scala.js Ecosystem",
+                "Scala Exchange 7 Dec 2014",
+                "https://vimeo.com/113967983"
+              ),
+              talk(
+                "Hands-On Scala.js",
+                "Pacific-North-West Scala 14 Nov 2014",
+                "https://vimeo.com/111978847"
+              ),
+              talk(
+                "Cross-platform development with Scala.js",
+                "Scala by the Bay 9 Aug 2014",
+                "https://www.youtube.com/watch?v=Ksoi6AG9nbA"
+              ),
+              talk(
+                "Fun Functional-Reactive Programming with Scala.Rx",
+                "Scaladays 17 Jun 2014",
+                "https://vimeo.com/98477272"
+              ),
+              talk(
+                "Live-Coding Scala.js",
+                "SF Scala Meetup 28 Feb 2014",
+                "https://vimeo.com/87845442"
+              ),
+              talk(
+                "Metascala: a tiny DIY JVM",
+                "Scala Exchange 2 Dec 2013",
+                "https://skillsmatter.com/skillscasts/4916-metascala-a-tiny-diy-jvm"
               )
-
             )
           )
         )
