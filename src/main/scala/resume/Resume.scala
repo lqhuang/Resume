@@ -75,69 +75,69 @@ object Resume{
               )
             )
           )
-        ),
-        hr,
-        table(
-          width := "100%",
-          section(
-            "Work",
-            col(
-              row(h2(sectionHeading, "Dropbox"), logo("Dropbox.png"), div(rightGreyText, "San Francisco, CA")),
-              titledBlock(
-                "Software Engineer, Developer Tools", "Mar 2015 - Present",
+      ),
+      hr,
+      table(
+        width := "100%",
+        section(
+          "Work",
+          col(
+            row(h2(sectionHeading, "Dropbox"), logo("Dropbox.png"), div(rightGreyText, "San Francisco, CA")),
+            titledBlock(
+              "Software Engineer, Developer Tools", "Mar 2015 - Present",
 
-                """
-                Built static analysis tools for in Python and Coffeescript, allowing
-                fast refactoring without fear. Enforces correctness, file-layout conventions,
-                and blocks code smells such as import cycles or dead code.
-                Rejects 50+ diffs a week
-                """,
-                """
-                Rolled out an improved development workflow, reducing
-                edit-refresh latency by 3x for Python and Coffeescript
-                """,
-                """
-                Led a team of 2-3 to destroy flaky tests in our CI system; via research,
-                monitoring, and automatic quarantine, we reduced the number of builds
-                failing due to flaky tests from about 10% to 1%
-                """,
-                """
-                Helped manage our CI system comprising >3000 CI machines
-                """,
-                """
-                Mentored an intern completing a successful project (test
-                quarantine) in his 12 weeks here
-                """
-              ),
-              titledBlock(
-                "Software Engineer, Web Platform", "Mar 2014 - Mar 2015",
-                """
-                Set up selenium test infrastructure (> 300 CI machines), created a
-                streamlined developer workflow, and got it adopted across engineering.
-                Reduced the number of bugs reaching production by 5-10 a week
-                """,
-                """
-                Modularized our >100,000 lines of Coffeescript, moving from a 'cat
-                em all' build system to Require.js modules
-                """,
-                """
-                Built an auto-packager using machine learning to reduce
-                the number of separate Javascript downloads by 200ish per page, cutting
-                international latency by several seconds.
-                """
-              ),
-              titledBlock(
-                "Software Engineer, Dropbox for Business", "Aug 2013 - Mar 2014",
-                """
-                Worked on two-account migration for www.dropbox.com, two-account
-                pairing flow
-                """,
-                """
-                Performance improvements for most common pages, including speeding up the
-                home page by 6x
-                """
-              )
+              """
+              Built static analysis tools for in Python and Coffeescript, allowing
+              fast refactoring without fear. Enforces correctness, file-layout conventions,
+              and blocks code smells such as import cycles or dead code.
+              Rejects 50+ diffs a week
+              """,
+              """
+              Rolled out an improved development workflow, reducing
+              edit-refresh latency by 3x for Python and Coffeescript
+              """,
+              """
+              Led a team of 2-3 to destroy flaky tests in our CI system; via research,
+              monitoring, and automatic quarantine, we reduced the number of builds
+              failing due to flaky tests from about 10% to 1%
+              """,
+              """
+              Helped manage our CI system comprising >3000 CI machines
+              """,
+              """
+              Mentored an intern completing a successful project (test
+              quarantine) in his 12 weeks here
+              """
+            ),
+            titledBlock(
+              "Software Engineer, Web Platform", "Mar 2014 - Mar 2015",
+              """
+              Set up selenium test infrastructure (> 300 CI machines), created a
+              streamlined developer workflow, and got it adopted across engineering.
+              Reduced the number of bugs reaching production by 5-10 a week
+              """,
+              """
+              Modularized our >100,000 lines of Coffeescript, moving from a 'cat
+              em all' build system to Require.js modules
+              """,
+              """
+              Built an auto-packager using machine learning to reduce
+              the number of separate Javascript downloads by 200ish per page, cutting
+              international latency by several seconds.
+              """
+            ),
+            titledBlock(
+              "Software Engineer, Dropbox for Business", "Aug 2013 - Mar 2014",
+              """
+              Worked on two-account migration for www.dropbox.com, two-account
+              pairing flow
+              """,
+              """
+              Performance improvements for most common pages, including speeding up the
+              home page by 6x
+              """
             )
+          )
         ),
         section(
           "Open Source",
