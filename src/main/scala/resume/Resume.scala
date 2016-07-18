@@ -158,7 +158,7 @@ object Resume{
               p(para,
                 "Built the core foundation of Scala.js compatible libraries, such as ",
                 autolink("https://github.com/scala-js/scala-js-dom"), ", ",
-                autolink("https://lihaoyi.github.io/upickle-pprint"), ", ",
+                autolink("https://lihaoyi.github.io/upickle-pprint/upickle"), ", ",
                 autolink("https://www.github.com/lihaoyi/utest"), ", and ",
                 autolink("https://lihaoyi.github.io/scalatags"), ", making it ",
                 "possible to do real work with Scala.js"
