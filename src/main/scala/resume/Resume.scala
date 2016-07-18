@@ -246,7 +246,7 @@ object Resume{
 
               p(para,
                 span(roleText, "uPickle "),
-                autolink("https://lihaoyi.github.io/upickle-pprint"),
+                autolink("https://lihaoyi.github.io/upickle-pprint/upickle"),
                 ": convenient, safe, and pretty-fast JSON serialization"
               ),
               p(para,
