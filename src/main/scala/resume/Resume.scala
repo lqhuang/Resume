@@ -158,8 +158,8 @@ object Resume{
               p(para,
                 "Built the core foundation of Scala.js compatible libraries, such as ",
                 autolink("https://github.com/scala-js/scala-js-dom"), ", ",
-                autolink("https://lihaoyi.github.io/upickle"), ", ",
-                autolink("https://lihaoyi.github.io/utest"), ", and ",
+                autolink("https://lihaoyi.github.io/upickle-pprint"), ", ",
+                autolink("https://www.github.com/lihaoyi/utest"), ", and ",
                 autolink("https://lihaoyi.github.io/scalatags"), ", making it ",
                 "possible to do real work with Scala.js"
               ),
@@ -225,7 +225,7 @@ object Resume{
                 ": convenient, safe, and blazing-fast HTML templating.  ",
                 "The go-to standalone HTML generation library for Scala, ",
                 "its API has inspired many downstream projects like ",
-                autolink("https://github.com/japgolly/scala-js-react"), " and ",
+                autolink("https://github.com/japgolly/scalajs-react"), " and ",
                 autolink("https://github.com/widok/widok")
               ),
               p(para,
@@ -246,22 +246,22 @@ object Resume{
 
               p(para,
                 span(roleText, "uPickle "),
-                autolink("https://lihaoyi.github.io/upickle"),
+                autolink("https://lihaoyi.github.io/upickle-pprint"),
                 ": convenient, safe, and pretty-fast JSON serialization"
               ),
               p(para,
                 span(roleText, "uTest "),
-                autolink("https://lihaoyi.github.io/utest"),
+                autolink("https://www.github.com/lihaoyi/utest"),
                 ": a tiny, minimal test-framework without bells and whistles"
               ),
               p(para,
                 span(roleText, "Fansi "),
-                autolink("https://lihaoyi.github.io/fansi"),
+                autolink("https://wwww.github.com/lihaoyi/fansi"),
                 ": convenient, safe and fast terminal colored-string manipulation"
               ),
               p(para,
                 span(roleText, "SourceCode "),
-                autolink("https://lihaoyi.github.io/sourcecode"),
+                autolink("https://www.github.com/lihaoyi/sourcecode"),
                 ": automatically capturing source metadata for logging and debuggability"
               )
             ),
