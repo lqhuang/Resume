@@ -271,7 +271,7 @@ object Resume{
                 In total my libraries are getting >90,000 downloads a month
                 from the Maven Central package repository. See
                 """,
-                autolink("https://lihaoyi.github.io/"), " to find out more."
+                autolink("https://www.github.com/lihaoyi/"), " to find out more."
               )
             )
           )
