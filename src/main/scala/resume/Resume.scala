@@ -388,9 +388,9 @@ object Resume{
                 """)
               ),
               talk(
-                "Isomorphic Web Deevelopement without Javascript, with Scala.js!",
-                "Forward! JS Web Summit, Feb 2016",
-                ""
+                "Isomorphic Web Developement without Javascript, with Scala.js!",
+                "Forward! JS Web Summit, 10 Feb 2016",
+                "https://vimeo.com/154932681"
               ),
               talk(
                 "Shell-scripting in a Typed, OO Language",
