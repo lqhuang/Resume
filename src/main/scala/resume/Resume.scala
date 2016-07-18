@@ -256,13 +256,13 @@ object Resume{
               ),
               p(para,
                 span(roleText, "Fansi "),
-                autolink("https://wwww.github.com/lihaoyi/fansi"),
+                autolink("https://www.github.com/lihaoyi/fansi"),
                 ": convenient, safe and fast terminal colored-string manipulation"
               ),
               p(para,
                 span(roleText, "SourceCode "),
                 autolink("https://www.github.com/lihaoyi/sourcecode"),
-                ": automatically capturing source metadata for logging and debuggability"
+                ": automatic source metadata for logging and debuggability"
               )
             ),
             div(listBlock,
