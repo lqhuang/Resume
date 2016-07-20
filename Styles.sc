@@ -1,9 +1,6 @@
-package resume
+import $ivy.`com.lihaoyi::scalatags:0.6.0`, scalatags.Text.all._, scalatags.stylesheet._
 
-import scalatags.Text.all._
-import scalatags.stylesheet._
-
-object Styles extends StyleSheet{
+object MyStyles extends StyleSheet{
   val cssReset =
     """
       |/* http://meyerweb.com/eric/tools/css/reset/
