@@ -202,7 +202,7 @@ val blob = html(
             """
           )
         ),
-        row(h2(sectionHeading, "Other Projects")),
+        row(h2(sectionHeading, "Other Projects"), logo("Scala.png")),
         div(listBlock,
           p(para,
             """

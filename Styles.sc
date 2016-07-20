@@ -1,6 +1,7 @@
 import $ivy.`com.lihaoyi::scalatags:0.6.0`, scalatags.Text.all._, scalatags.stylesheet._
 
 object MyStyles extends StyleSheet{
+  override def customSheetName = Some("Styles")
   val cssReset =
     """
       |/* http://meyerweb.com/eric/tools/css/reset/
