@@ -1,6 +1,6 @@
 # Haoyi's Resume
 
-This is a small demonstration of hwo to use [Ammonite](https://github.com/lihaoyi/Ammonite)'s 
+This is a small demonstration of how to use [Ammonite](https://github.com/lihaoyi/Ammonite)'s 
 new [Scala Scripts](http://www.lihaoyi.com/Ammonite/master/#ScalaScripts), which are available
 in the latest snapshot build of Ammonite.
 
