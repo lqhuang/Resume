@@ -146,12 +146,6 @@ val blob = html(
             autolink("https://lihaoyi.github.io/roll")
           ),
           p(para,
-            """
-            Pushed for usability improvements that made Scala.js actually
-            usable (edit-refresh speed, debuggability, etc.)
-            """
-          ),
-          p(para,
             "Built the core foundation of Scala.js compatible libraries, such as ",
             autolink("https://github.com/scala-js/scala-js-dom"), ", ",
             autolink("https://lihaoyi.github.io/upickle-pprint/upickle"), ", ",
@@ -203,24 +197,19 @@ val blob = html(
           )
         ),
         row(h2(sectionHeading, "Other Projects"), logo("Scala.png")),
-        div(listBlock,
           p(para,
             """
-            Built many libraries that are widely used in the Scala
-            community, both on Scala.js and on Scala's traditional platform
-            the JVM, including many which are best-in-class for whatever
-            problem they are trying to solve.
-            Examples include:
+            Built many libraries that are widely used (>90,000 downloads a
+            month) in the Scala community, both on Scala.js and on Scala's
+            traditional platform the JVM. Examples include:
             """
-          )
         ),
         bulletList(
           p(para,
             span(roleText, "Scalatags "),
             autolink("https://lihaoyi.github.io/scalatags"),
-            ": convenient, safe, and blazing-fast HTML templating.  ",
-            "The go-to standalone HTML generation library for Scala, ",
-            "its API has inspired many downstream projects like ",
+            ": the go-to standalone HTML generation library for Scala. ",
+            "Its API has inspired many other projects like ",
             autolink("https://github.com/japgolly/scalajs-react"), " and ",
             autolink("https://github.com/widok/widok")
           ),
@@ -235,9 +224,8 @@ val blob = html(
             autolink("https://lihaoyi.github.io/fastparse"),
             ": convenient, safe and blazing-fast parser-combinators. ",
             "Basically the same as the std-lib parser-combinators but ",
-            "better in every way. Currently the go-to library for anyone ",
-            "who wants to write a parser in Scala, and is being ",
-            "considered for being included in the standard library"
+            "better. Currently the go-to library for anyone ",
+            "who wants to write a parser in Scala"
           ),
 
           p(para,
@@ -249,28 +237,40 @@ val blob = html(
             span(roleText, "uTest "),
             autolink("https://www.github.com/lihaoyi/utest"),
             ": a tiny, minimal test-framework without bells and whistles"
-          ),
-          p(para,
-            span(roleText, "Fansi "),
-            autolink("https://www.github.com/lihaoyi/fansi"),
-            ": convenient, safe and fast terminal colored-string manipulation"
-          ),
-          p(para,
-            span(roleText, "SourceCode "),
-            autolink("https://www.github.com/lihaoyi/sourcecode"),
-            ": automatic source metadata for logging and debuggability"
           )
         ),
-        div(listBlock,
-          p(para,
-            """
-            In total my libraries are getting >90,000 downloads a month
-            from the Maven Central package repository. See
-            """,
-            autolink("https://www.github.com/lihaoyi/"), " to find out more."
+        row(h2(sectionHeading, "Google Summer of Code"), logo("GSOC.png")),
+        titledBlock(
+          "GSOC 2016", "",
+          span(
+            "Mentored ",
+            a(
+              "Abhishek Kumar",
+              href := "https://github.com/lihaoyi/Ammonite/pulls?utf8=%E2%9C%93&q=is%3Apr%20author%3Acoderabhishek%20"),
+            ", working on performance, usability and Windows-support for Ammonite's",
+            " scripts"
+          ),
+          span(
+            "Mentored ",
+            a(
+              "Vladimir Polushin",
+              href := "https://github.com/lihaoyi/fastparse/pulls?utf8=%E2%9C%93&q=is%3Apr%20author%3Avovapolu%20"),
+            ", who extended Fastparse's string-parsing to support ",
+            " parsing binary and streaming input"
+          )
+        ),
+        titledBlock(
+          "GSOC 2015", "",
+          span(
+            "Mentored ",
+            a(
+              "Laszlo Mero",
+              href := "https://github.com/lihaoyi/Ammonite/pulls?utf8=%E2%9C%93&q=%20is%3Apr%20author%3Alaci37%20"),
+            ", who first implemented script-running support for the Ammonite REPL"
           )
         )
       )
+
     ),
     section(
       "Buzzwords",
@@ -452,4 +452,5 @@ val blob = html(
     )
   )
 )
+rm(cwd/'target/"resume.html")
 write.over(cwd/'target/"resume.html", blob.render)
