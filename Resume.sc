@@ -1,6 +1,6 @@
 import ammonite.ops._
 import $file.Styles, Styles.MyStyles._
-import $ivy.`com.lihaoyi::scalatags:0.6.0`, scalatags.Text.all._
+import $ivy.`com.lihaoyi::scalatags:0.6.2`, scalatags.Text.all._
 def dataUri(filepath: Path) = {
   "data:image/png;base64," +
   javax.xml.bind.DatatypeConverter.printBase64Binary(
@@ -80,7 +80,7 @@ val blob = html(
       col(
         row(h2(sectionHeading, "Dropbox"), logo("Dropbox.png"), div(rightGreyText, "San Francisco, CA")),
         titledBlock(
-          "Software Engineer, Developer Tools", "Mar 2015 - Present",
+          "Software Engineer, Developer Tools", "Mar 2015 - Oct 2016",
 
           """
           Built static analysis tools for in Python and Coffeescript, allowing
