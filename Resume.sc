@@ -34,9 +34,12 @@ def section(title: String, body: Frag) = tr(
   td(h2(paddingTop := 10, paddingBottom := 10, sectionHeading, title, marginRight := 20)),
   td(paddingTop := 10, paddingBottom := 10, body)
 )
-def talk(name: String, loc: String, video: String) = div(
-  row(h3(roleText, name), div(rightGreyText, loc)),
-  ul(listBlock, li(listItem, autolink(video)))
+def talk(name: String, pairs: (String, String)*) = div(
+  h3(roleText, name),
+  ul(listBlock,
+    for((loc, video) <- pairs)
+    yield li(listItem, autolink(video), div(float.right, rightGreyText, loc))
+  )
 )
 
 
@@ -377,75 +380,61 @@ val blob = html(
       col(
         div(
           row(h2(sectionHeading, "Talks"), logo("GoogleSlides.png")),
-          div(listBlock,
-            p(para, """
-              Presentations I've given: at meetup groups,
-              industry conferences and academic workshops. Stay a while and listen!
-            """)
+          talk(
+            "Isomorphic Web Developement without Javascript, with Scala.js!",
+            "Scala Exchange, 8 Dec 2016" -> "https://vimeo.com/194959852",
+            "Scala by the Bay, 10 Nov 2016" -> "https://vimeo.com/191328477"
           ),
           talk(
             "Isomorphic Web Developement without Javascript, with Scala.js!",
-            "Forward! JS Web Summit, 10 Feb 2016",
-            "https://vimeo.com/154932681"
+            "Forward! JS Web Summit, 10 Feb 2016" -> "https://vimeo.com/154932681"
           ),
           talk(
             "Shell-scripting in a Typed, OO Language",
-            "New Object Oriented Languages, SPLASH 28 Oct 2015",
-            "https://vimeo.com/143819744"
+            "New Object Oriented Languages, SPLASH 28 Oct 2015" -> "https://vimeo.com/143819744"
           ),
           talk(
             "Fast, Modern, OO Parser Combinators",
-            "Parsing@SLE, SPLASH 24 Oct 2015",
-            "https://vimeo.com/143572750"
+            "Parsing@SLE, SPLASH 24 Oct 2015" -> "https://vimeo.com/143572750"
           ),
           talk(
             "FastParse:  Fast, Modern Parser Combinators",
-            "SF Scala Meetup 13 Oct 2015",
-            "https://vimeo.com/142341803"
+            "SF Scala Meetup 13 Oct 2015" -> "https://vimeo.com/142341803"
           ),talk(
             "Beyond Bash",
-            "Scala by the Bay 12 Aug 2015",
-            "https://www.youtube.com/watch?v=dP5tkmWAhjg"
+            "Scala by the Bay 12 Aug 2015" -> "https://www.youtube.com/watch?v=dP5tkmWAhjg"
           ),
           talk(
             "Why (You might like) Scala.js",
-            "Scaladays 17 Mar 2015",
-            "https://vimeo.com/122611959"
+            "Scaladays 17 Mar 2015" -> "https://vimeo.com/122611959"
           ),
           talk(
             "Scala.js - Safety & Sanity in the wild west of the web",
-            "PhillyETE 8 Mar 2015",
-            "https://vimeo.com/124702603"
+            "PhillyETE 8 Mar 2015" -> "https://vimeo.com/124702603"
           ),
           talk(
             "Bootstrapping the Scala.js Ecosystem",
-            "Scala Exchange 7 Dec 2014",
-            "https://vimeo.com/113967983"
+            "Scala Exchange 7 Dec 2014" -> "https://vimeo.com/113967983"
           ),
           talk(
             "Hands-On Scala.js",
-            "Pacific-North-West Scala 14 Nov 2014",
-            "https://vimeo.com/111978847"
+            "Pacific-North-West Scala 14 Nov 2014" -> "https://vimeo.com/111978847"
           ),
           talk(
             "Cross-platform development with Scala.js",
-            "Scala by the Bay 9 Aug 2014",
-            "https://www.youtube.com/watch?v=Ksoi6AG9nbA"
+            "Scala by the Bay 9 Aug 2014" -> "https://www.youtube.com/watch?v=Ksoi6AG9nbA"
           ),
           talk(
             "Fun Functional-Reactive Programming with Scala.Rx",
-            "Scaladays 17 Jun 2014",
-            "https://vimeo.com/98477272"
+            "Scaladays 17 Jun 2014" -> "https://vimeo.com/98477272"
           ),
           talk(
             "Live-Coding Scala.js",
-            "SF Scala Meetup 28 Feb 2014",
-            "https://vimeo.com/87845442"
+            "SF Scala Meetup 28 Feb 2014" -> "https://vimeo.com/87845442"
           ),
           talk(
             "Metascala: a tiny DIY JVM",
-            "Scala Exchange 2 Dec 2013",
-            "https://skillsmatter.com/skillscasts/4916-metascala-a-tiny-diy-jvm"
+            "Scala Exchange 2 Dec 2013" -> "https://skillsmatter.com/skillscasts/4916-metascala-a-tiny-diy-jvm"
           )
         )
       )
