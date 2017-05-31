@@ -1,6 +1,6 @@
 import ammonite.ops._
 import $file.Styles, Styles.MyStyles._
-import $ivy.`com.lihaoyi::scalatags:0.6.2`, scalatags.Text.all._
+import $ivy.`com.lihaoyi::scalatags:0.6.2`, scalatags.Text.all.{src, _}
 def dataUri(filepath: Path) = {
   "data:image/png;base64," +
   javax.xml.bind.DatatypeConverter.printBase64Binary(
@@ -81,6 +81,15 @@ val blob = html(
     section(
       "Work",
       col(
+        row(h2(sectionHeading, "Fluent Technologies"), logo("Fluent.jpg"), div(rightGreyText, "Singapore")),
+        titledBlock(
+          "Engineering Lead", "Oct 2016 - Apr 2017",
+          """
+          Built the Fluent code explorer, an online tool
+          to seamlessly browse and search a company's
+          entire codebase and commit history.
+          """
+        ),
         row(h2(sectionHeading, "Dropbox"), logo("Dropbox.png"), div(rightGreyText, "San Francisco, CA")),
         titledBlock(
           "Software Engineer, Developer Tools", "Mar 2015 - Oct 2016",
@@ -380,8 +389,13 @@ val blob = html(
       col(
         div(
           row(h2(sectionHeading, "Talks"), logo("GoogleSlides.png")),
+
           talk(
-            "Isomorphic Web Developement without Javascript, with Scala.js!",
+            "Four Facets of Good Open-Source Libraries",
+            "SF/BayArea/NY Scala Meetups, Apr 2016" -> "https://vimeo.com/215325495"
+          ),
+          talk(
+            "Scala Scripting",
             "Scala Exchange, 8 Dec 2016" -> "https://vimeo.com/194959852",
             "Scala by the Bay, 10 Nov 2016" -> "https://vimeo.com/191328477"
           ),
