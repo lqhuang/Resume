@@ -1,6 +1,6 @@
 import ammonite.ops._
 import $file.Styles, Styles.MyStyles._
-import $ivy.`com.lihaoyi::scalatags:0.6.2`, scalatags.Text.all.{src, _}
+import $ivy.`com.lihaoyi::scalatags:0.6.2`, scalatags.Text.all._
 def dataUri(filepath: Path) = {
   "data:image/png;base64," +
   javax.xml.bind.DatatypeConverter.printBase64Binary(
