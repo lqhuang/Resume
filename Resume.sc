@@ -129,6 +129,11 @@ val blob = html(
           em all' build system to Require.js modules
           """,
           """
+          Evangelized, integrated and rolled out React.js as the standard
+          front-end UI framework across product engineering, to overwhelmingly
+          positive feedback on our developer feedback surveys.
+          """,
+          """
           Built an auto-packager using machine learning to reduce
           the number of separate Javascript downloads by 200ish per page, cutting
           international latency by several seconds.
@@ -155,7 +160,8 @@ val blob = html(
           p(para,
             "Pioneered usage of Scala.js, demonstrating its effectiveness in writing ",
             "real-world projects through ", autolink("https://lihaoyi.github.io/scala-js-games"), " and ",
-            autolink("https://lihaoyi.github.io/roll")
+            autolink("https://lihaoyi.github.io/roll"), ", and presentations like ",
+            i(talkName, "Live-Coding Scala.js")
           ),
           p(para,
             "Built the core foundation of Scala.js compatible libraries, such as ",
@@ -166,19 +172,12 @@ val blob = html(
             "possible to do real work with Scala.js"
           ),
           p(para,
-            "Did presentations such as ", i(talkName, "Live Coding Scala.js"), ", Scala.js' ",
-            "debut talk at the SF Scala Meetup, ",
-            "which has been watched over 5,000 times. My Scala.js-related videos ",
-            "have had >20,000 views on all platforms. Full listing below."
-          ),
-          p(para,
             "Wrote the free, interactive e-book ", i(talkName, "Hands-on Scala.js"), " (",
             autolink("http://www.hands-on-scala-js.com"), ")"
           ),
           p(para,
             "Built the community from nothing to >1000 people in the Gitter ",
-            "channel, usage by hundreds of companies including big names ",
-            "like Twitter, and people giving talks about it at every Scala conference."
+            "channel, usage by hundreds of companies"
           )
         ),
         row(h2(sectionHeading, "Ammonite"), logo("Ammonite.png")),
@@ -190,9 +189,6 @@ val blob = html(
             syntax highlighting, pretty-printed output, multi-line editing,
             and many other quality-of-life improvements
             """
-          ),
-          p(para,
-            "Effectively the equivalent of IPython REPL for the Scala"
           ),
           p(para,
             """
@@ -226,24 +222,12 @@ val blob = html(
             autolink("https://github.com/widok/widok")
           ),
           p(para,
-            span(roleText, "Scala-Js-Dom "),
-            autolink("https://github.com/scala-js/scala-js-dom"),
-            ": statically-typed bindings for the entirety of the Javascript ",
-            "DOM APIs. Necessary for basically any project using Scala.js"
-          ),
-          p(para,
             span(roleText, "FastParse "),
             autolink("https://lihaoyi.github.io/fastparse"),
             ": convenient, safe and blazing-fast parser-combinators. ",
             "Basically the same as the std-lib parser-combinators but ",
             "better. Currently the go-to library for anyone ",
             "who wants to write a parser in Scala"
-          ),
-
-          p(para,
-            span(roleText, "uPickle "),
-            autolink("https://lihaoyi.github.io/upickle-pprint/upickle"),
-            ": convenient, safe, and pretty-fast JSON serialization"
           ),
           p(para,
             span(roleText, "uTest "),
@@ -348,22 +332,13 @@ val blob = html(
         div(
           row(h2(sectionHeading, "Dropbox"), logo("Dropbox.png"), div(rightGreyText, "San Francisco, CA")),
           titledBlock(
-            "Software Engineer Intern, API Team", "May 2012 - Aug 2012",
-            """
-            Built, documented and launched infrastructure to allow API apps to upload
-            large files to Dropbox
-            """,
-            """
-            Wrote unit tests, improved documentation and set up continuous
-            integration for the Dropbox client SDKs
-            """
+            "Software Engineer Intern, API Team", "May 2012 - Aug 2012"
           )
         ),
         div(
           row(h2(sectionHeading, "Facebook"), logo("Facebook.jpg"), div(rightGreyText, "Palo Alto, CA")),
           titledBlock(
-            "Software Engineer Intern, Messaging Team", "May 2011 - Aug 2011",
-            "Built an extensible attachment framework for Facebook Messages."
+            "Software Engineer Intern, Messaging Team", "May 2011 - Aug 2011"
           )
         ),
         div(
@@ -374,12 +349,7 @@ val blob = html(
           ),
           titledBlock(
             "Lieutenant, Platoon Commander, 35th Battalion Singapore Combat Engineers",
-            "Jan 2008 - Nov 2009",
-            """
-            Managed the platoon's discipline and wellbeing, and their
-            proficiency at operating military bridges.
-            """,
-            "Took part in combined-arms field exercises"
+            "Jan 2008 - Nov 2009"
           )
         )
       )
