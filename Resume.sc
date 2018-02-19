@@ -81,12 +81,19 @@ val blob = html(
     section(
       "Work",
       col(
+        row(h2(sectionHeading, "Databricks"), logo("Databricks.png"), div(rightGreyText, "San Francisc, CA")),
+        titledBlock(
+          "Software Engineer", "Oct 2017 - Present",
+          """
+          Building tools & improving developer productivity
+          """
+        ),
         row(h2(sectionHeading, "Fluent Technologies"), logo("Fluent.jpg"), div(rightGreyText, "Singapore")),
         titledBlock(
           "Engineering Lead", "Oct 2016 - Apr 2017",
           """
-          Built the Fluent code explorer, an online tool
-          to seamlessly browse and search a company's
+          Built the Fluent code explorer, a tool
+          to seamlessly search a company's
           entire codebase and commit history.
           """
         ),
@@ -96,18 +103,15 @@ val blob = html(
 
           """
           Built static analysis tools for in Python and Coffeescript, allowing
-          fast refactoring without fear. Enforces correctness, file-layout conventions,
-          and blocks code smells such as import cycles or dead code.
-          Rejects 50+ diffs a week
+          fast refactoring. Rejects 50+ buggy diffs a week
           """,
           """
           Rolled out an improved development workflow, reducing
           edit-refresh latency by 3x for Python and Coffeescript
           """,
           """
-          Led a team of 2-3 to destroy flaky tests in our CI system; via research,
-          monitoring, and automatic quarantine, we reduced the number of builds
-          failing due to flaky tests from about 10% to 1%
+          Led a team of 2-3 to destroy flaky tests; reduced
+          the number of builds failing due to flaky tests from about 10% to 1%
           """,
           """
           Helped manage our CI system comprising >3000 CI machines
@@ -120,23 +124,16 @@ val blob = html(
         titledBlock(
           "Software Engineer, Web Platform", "Mar 2014 - Mar 2015",
           """
-          Set up selenium test infrastructure (> 300 CI machines), created a
-          streamlined developer workflow, and got it adopted across engineering.
-          Reduced the number of bugs reaching production by 5-10 a week
+          Set up selenium tests (> 300 CI machines) & got them
+          adopted. Reduced bugs reaching production by 5-10 a week
           """,
           """
           Modularized our >100,000 lines of Coffeescript, moving from a 'cat
           em all' build system to Require.js modules
           """,
           """
-          Evangelized, integrated and rolled out React.js as the standard
-          front-end UI framework across product engineering, to overwhelmingly
-          positive feedback on our developer feedback surveys.
-          """,
-          """
           Built an auto-packager using machine learning to reduce
-          the number of separate Javascript downloads by 200ish per page, cutting
-          international latency by several seconds.
+          the number of Javascript downloads by 200ish per page
           """
         ),
         titledBlock(
