@@ -3,7 +3,7 @@ import $file.Styles, Styles.MyStyles._
 import $ivy.`com.lihaoyi::scalatags:0.6.2`, scalatags.Text.all._
 def dataUri(filepath: Path) = {
   "data:image/png;base64," +
-  javax.xml.bind.DatatypeConverter.printBase64Binary(
+  java.util.Base64.getEncoder().encodeToString(
     read.bytes! filepath
   )
 }
@@ -27,7 +27,7 @@ def quickBullet(lhs: String, rhs: String) = tr(
   td(para, rhs)
 )
 def logo(s: String) = {
-  img(height := 15, src := dataUri(cwd/'images/s))
+  img(height := 15, src := dataUri(pwd/'images/s))
 }
 def section(title: String, body: Frag) = tr(
 
@@ -83,18 +83,40 @@ val blob = html(
       col(
         row(h2(sectionHeading, "Databricks"), logo("Databricks.png"), div(rightGreyText, "San Francisc, CA")),
         titledBlock(
-          "Software Engineer", "Oct 2017 - Present",
+          "Software Engineer - Developer Tools", "Oct 2017 - Present",
           """
-          Building tools & improving developer productivity
+          Sped up all core developer workflows (compiling Scala code, running
+          test services, testing spark images, configuring deployment
+          infrastructure, etc.) by 5-10x, reducing minutes- to tens-of-minutes-long
+          workflows to a few seconds
+          """,
           """
-        ),
-        row(h2(sectionHeading, "Fluent Technologies"), logo("Fluent.jpg"), div(rightGreyText, "Singapore")),
-        titledBlock(
-          "Engineering Lead", "Oct 2016 - Apr 2017",
+          Implemented a 50x faster compiler and an IntelliJ IDE plugin for the
+          Jsonnet configuration language
+          """,
           """
-          Built the Fluent code explorer, a tool
-          to seamlessly search a company's
-          entire codebase and commit history.
+          Developed a "Dev Box" service that provides on-demand, one-click
+          remote development environments. Developers get a large, fast remote
+          machine to work on, further doubling the speed of arbitrary workflows
+          while minimizing costs by shutting down when not in use.
+          """,
+          """
+          Run regular surveys to take the subjective pain
+          points that Databricks engineers with their tooling have and quantify
+          them, letting us prioritize work on improvements that would
+          have the largest and broadest impact .
+          """,
+          """
+          Introduced structured error logging as a development practice,
+          allowing engineers to rapidly find and fix issues in development and
+          production services pro-actively, without needing to wait for customer
+          complaints to come in
+          """,
+          """
+          Ran "show and tell" tech talks with both internal and external speakers,
+          helping disseminate knowledge and best practices across the organization
+          and stimulating discussion and collaborating on common problems and
+          pain points
           """
         ),
         row(h2(sectionHeading, "Dropbox"), logo("Dropbox.png"), div(rightGreyText, "San Francisco, CA")),
@@ -156,33 +178,21 @@ val blob = html(
         bulletList(
           p(para,
             "Pioneered usage of Scala.js, demonstrating its effectiveness in writing ",
-            "real-world projects through ", autolink("https://lihaoyi.github.io/scala-js-games"), " and ",
-            autolink("https://lihaoyi.github.io/roll"), ", and presentations like ",
-            i(talkName, "Live-Coding Scala.js")
-          ),
-          p(para,
-            "Built the core foundation of Scala.js compatible libraries, such as ",
+            "real-world projects. Built the core foundation of Scala.js libraries such as ",
             autolink("https://github.com/scala-js/scala-js-dom"), ", ",
-            autolink("https://lihaoyi.github.io/upickle-pprint/upickle"), ", ",
+            autolink("https://lihaoyi.com/upickle"), ", ",
             autolink("https://www.github.com/lihaoyi/utest"), ", and ",
-            autolink("https://lihaoyi.github.io/scalatags"), ", making it ",
-            "possible to do real work with Scala.js"
-          ),
-          p(para,
-            "Wrote the free, interactive e-book ", i(talkName, "Hands-on Scala.js"), " (",
+            autolink("https://lihaoyi.com/scalatags"), ", and ",
+            "wrote the free, interactive e-book ", i(talkName, "Hands-on Scala.js"), " (",
             autolink("http://www.hands-on-scala-js.com"), ")"
           ),
-          p(para,
-            "Built the community from nothing to >1000 people in the Gitter ",
-            "channel, usage by hundreds of companies"
-          )
         ),
         row(h2(sectionHeading, "Ammonite"), logo("Ammonite.png")),
         bulletList(
           p(para,
             "Implemented the Ammonite REPL (",
-            autolink("https://lihaoyi.github.io/Ammonite"),
-            """) an improved Scala REPL with
+            autolink("https://ammonite.io"),
+            """) an improved Scala REPL and Script runner with
             syntax highlighting, pretty-printed output, multi-line editing,
             and many other quality-of-life improvements
             """
@@ -192,45 +202,16 @@ val blob = html(
             Well known in the community and used in many Scala shops,
             from startups to large ones like Twitter and Verizon
             """
-          ),
-          p(para,
-            """
-            Was forked to be used as the REPL for "Dotty", a
-            project by the core Scala team trying to define the
-            future of Scala
-            """
           )
         ),
-        row(h2(sectionHeading, "Other Projects"), logo("Scala.png")),
+        row(h2(sectionHeading, "FastParse"), logo("fastparse.png")),
           p(para,
+            autolink("https://www.lihaoyi.com/fastparse"),
             """
-            Built many libraries that are widely used (>90,000 downloads a
-            month) in the Scala community, both on Scala.js and on Scala's
-            traditional platform the JVM. Examples include:
+            : the de-facto standard parsing library for easily parsing structured
+            text in Scala; makes writing parsers trivial and safe, while running
+            hundreds of times faster than the built-in Scala parsing library
             """
-        ),
-        bulletList(
-          p(para,
-            span(roleText, "Scalatags "),
-            autolink("https://lihaoyi.github.io/scalatags"),
-            ": the go-to standalone HTML generation library for Scala. ",
-            "Its API has inspired many other projects like ",
-            autolink("https://github.com/japgolly/scalajs-react"), " and ",
-            autolink("https://github.com/widok/widok")
-          ),
-          p(para,
-            span(roleText, "FastParse "),
-            autolink("https://lihaoyi.github.io/fastparse"),
-            ": convenient, safe and blazing-fast parser-combinators. ",
-            "Basically the same as the std-lib parser-combinators but ",
-            "better. Currently the go-to library for anyone ",
-            "who wants to write a parser in Scala"
-          ),
-          p(para,
-            span(roleText, "uTest "),
-            autolink("https://www.github.com/lihaoyi/utest"),
-            ": a tiny, minimal test-framework without bells and whistles"
-          )
         ),
         row(h2(sectionHeading, "Google Summer of Code"), logo("GSOC.png")),
         titledBlock(
@@ -277,10 +258,7 @@ val blob = html(
             "Java",
             "C#",
             "Bash",
-            "Ruby",
-            "SQL",
-            "F#",
-            "PHP"
+            "SQL"
           ).mkString(" - "),
           Seq(
             "React.js",
@@ -422,5 +400,5 @@ val blob = html(
     )
   )
 )
-rm(cwd/'target/"resume.html")
-write.over(cwd/'target/"resume.html", blob.render)
+rm(pwd/'target/"resume.html")
+write.over(pwd/'target/"resume.html", blob.render)

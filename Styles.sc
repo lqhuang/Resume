@@ -76,7 +76,7 @@ object MyStyles extends StyleSheet{
   )
 
   def listBlock = cls(
-    marginBottom := 10
+    marginBottom := 15
   )
   def para = cls(
     fontSize := 12,
