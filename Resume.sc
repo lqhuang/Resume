@@ -83,7 +83,7 @@ val blob = html(
       col(
         row(h2(sectionHeading, "Databricks"), logo("Databricks.png"), div(rightGreyText, "San Francisc, CA")),
         titledBlock(
-          "Software Engineer - Developer Tools", "Oct 2017 - Present",
+          "Staff Software Engineer - Developer Tools", "Oct 2017 - Present",
           """
           Sped up all core developer workflows (compiling Scala code, running
           test services, testing spark images, configuring deployment
